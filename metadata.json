@@ -1,0 +1,6 @@
+{
+  "name": "TACHTOU - Quêtes & Aventures Quotidiennes",
+  "description": "Application RPG de gestion de tâches avec animations de coup d'épée, félicitations vocales, profil de héros et export Google Calendar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

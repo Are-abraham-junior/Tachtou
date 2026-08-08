@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-pixel {
+    font-family: 'Press Start 2P', monospace, cursive;
+  }
+}
+
+/* Retro Pixel Border Styles */
+.rpg-card {
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0px #000;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dark .rpg-card {
+  border: 3px solid #334155;
+  box-shadow: 4px 4px 0px #020617;
+}
+
+.rpg-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+.dark .rpg-card:hover {
+  box-shadow: 6px 6px 0px #020617;
+}
+
+.rpg-button {
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0px #000;
+  transition: all 0.1s ease;
+}
+
+.rpg-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+/* Sword Slash Keyframe Animations */
+@keyframes swordSlashLeftToRight {
+  0% {
+    transform: translate(-100%, -100%) rotate(-35deg) scaleX(0.2);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0%, 0%) rotate(-35deg) scaleX(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100%, 100%) rotate(-35deg) scaleX(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes swordSlashRightToLeft {
+  0% {
+    transform: translate(100%, -100%) rotate(35deg) scaleX(0.2);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0%, 0%) rotate(35deg) scaleX(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100%, 100%) rotate(35deg) scaleX(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkFlash {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-slash-1 {
+  animation: swordSlashLeftToRight 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slash-2 {
+  animation: swordSlashRightToLeft 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+.animate-spark {
+  animation: sparkFlash 0.5s ease-out forwards;
+}
+
